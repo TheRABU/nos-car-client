@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import UserDropdown from "../../pages/homepage/UserDropdown";
 
 const Header = () => {
   const navItems = (
@@ -23,7 +24,7 @@ const Header = () => {
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
           <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
           <span className="relative text-black group-hover:text-white">
-            Home
+            Services
           </span>
         </Link>
       </li>
@@ -35,7 +36,7 @@ const Header = () => {
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
           <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
           <span className="relative text-black group-hover:text-white">
-            Home
+            About
           </span>
         </Link>
       </li>
@@ -47,7 +48,19 @@ const Header = () => {
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
           <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
           <span className="relative text-black group-hover:text-white">
-            Home
+            Blog
+          </span>
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="relative inline-block px-4 py-2 font-medium group"
+        >
+          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+          <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+          <span className="relative text-black group-hover:text-white">
+            Contact
           </span>
         </Link>
       </li>
@@ -55,7 +68,7 @@ const Header = () => {
   );
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-pink-300 h-20 sticky ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -78,52 +91,31 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
+              {navItems}
+            </ul>
+          </div>
+          <a className="btn btn-ghost text-xl">NosCar</a>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal gap-x-6 px-1">{navItems}</ul>
+        </div>
+        <div className="navbar-end gap-x-2">
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            >
               <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
+                <button className="btn btn-secondary">Sign Out</button>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a
+          <Link
             href="#_"
             className="relative inline-block px-4 py-2 font-medium group"
           >
@@ -132,8 +124,20 @@ const Header = () => {
             <span className="relative text-black group-hover:text-white">
               Sign In
             </span>
-          </a>
+          </Link>
         </div>
+
+        {/* <div
+          tabIndex={0}
+          className="collapse collapse-arrow border border-base-300 bg-base-200"
+        >
+          <div className="collapse-title text-xl font-medium">
+            Focus me to see content
+          </div>
+          <div className="collapse-content">
+            <p>tabIndex={0} attribute is necessary to make the div focusable</p>
+          </div>
+        </div> */}
       </div>
     </>
   );
