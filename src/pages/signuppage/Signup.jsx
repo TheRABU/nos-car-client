@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import imgOfLogin from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../context-providers/AuthProvider";
+import Swal from "sweetalert2";
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
@@ -10,12 +11,17 @@ const Signup = () => {
     const email = form.email.value;
     const name = form.name.value;
     const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
 
-    createUser(name, email, password)
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+    }
+    createUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log("User created", user);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log("Error occured: ", err);
       });
   };
@@ -71,7 +77,7 @@ const Signup = () => {
               </label>
               <input
                 type="password"
-                name="password"
+                name="confirmPassword"
                 placeholder="Confirm password"
                 className="input input-bordered"
                 required
