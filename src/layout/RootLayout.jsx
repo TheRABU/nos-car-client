@@ -5,8 +5,8 @@ import Footer from "../shared/footer/Footer";
 const RootLayout = () => {
   return (
     <>
+      <Header />
       <div className="max-w-7xl mx-auto">
-        <Header />
         <Outlet />
       </div>
       <Footer />

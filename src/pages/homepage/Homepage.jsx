@@ -1,11 +1,14 @@
+import Aboutsection from "./Aboutsection";
 import Banner from "./Banner";
 
 const Homepage = () => {
   return (
     <>
-      <div>
-        <h1 className="text-center text-2xl font-black">Homepage</h1>
+      <div className="mt-10">
         <Banner />
+      </div>
+      <div className="mt-20">
+        <Aboutsection />
       </div>
     </>
   );
