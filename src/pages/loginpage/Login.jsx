@@ -53,7 +53,7 @@ const Login = () => {
               </div>
             </form>
             <p className="my-4 text-center">
-              New to Nos Cars?{" "}
+              New to Nos Car?{" "}
               <Link className="text-orange-600 font-bold" to="/sign-up">
                 Sign Up
               </Link>{" "}
