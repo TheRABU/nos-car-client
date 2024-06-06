@@ -1,5 +1,6 @@
 import Aboutsection from "./Aboutsection";
 import Banner from "./Banner";
+import Services from "./services/Services";
 
 const Homepage = () => {
   return (
@@ -9,6 +10,9 @@ const Homepage = () => {
       </div>
       <div className="mt-20">
         <Aboutsection />
+      </div>
+      <div>
+        <Services />
       </div>
     </>
   );
