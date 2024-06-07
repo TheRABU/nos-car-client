@@ -28,15 +28,9 @@ const AuthProvider = ({ children }) => {
   };
 
   // Sign Out
-  const logOut = (auth) => {
+  const logOut = () => {
     setLoading(true);
-    return signOut(auth)
-      .then(() => {
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log("An error has occured", error);
-      });
+    return signOut(auth);
   };
 
   // Current user state
